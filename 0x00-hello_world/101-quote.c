@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 /**
  * main - Entry point
  *
@@ -8,8 +9,10 @@ int main(void)
 {
 
 
-	char c[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char c[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-11\n";
 
-	return (*c);
+	write(0, c, 60);
+
+	return (1);
 
 }
