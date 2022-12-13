@@ -1,23 +1,24 @@
-#include <stdio.h>
 #include "main.h"
+
 /**
- * print_alphabet - prints the lowercase letters
+ * print_alphabet_x10 - Function being called
+ * by main to print alpha x10
  *
- * Return: Does not have return value
+ * Return: void
  */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 
-	int q, m;
+	int y, v;
 
-	q = 'a';
 
-	for (m = 1; m <= 10; m++)
+	for (v = 0; v <= 10; v++)
 	{
-		while (q <= 'z')
+
+		for (y = 'a'; y <= 'z'; y++)
 		{
-			_putchar(q);
-			q++;
+			_putchar(y);
+
 		}
 		_putchar('\n');
 	}
