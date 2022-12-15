@@ -9,7 +9,20 @@
 void print_triangle(int size)
 {
 
-	while (n < size)
+	int n, l;
+
+
+	if (size <= 0)
+		_putchar('\n');
+	else
+	       for (n = size; n >= 1; n--)	
+	       {
 		_putchar(' ');
-	_putchar('\n');
+
+		for (l = 1; l <= size; l++)
+		{
+			_putchar(35);
+		}
+		_putchar('\n');
+		}
 }

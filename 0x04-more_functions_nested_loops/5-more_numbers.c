@@ -5,19 +5,31 @@
  *
  * Return: void
  */
-void more_numbers(void);
+void more_numbers(void)
 {
 
 	int h, j;
 
-	for (i = 0; i <= 10; i++)
+
+	for (h = 0; h < 10; h++)
 	{
 
-		while (j < 15)
+		for (j = 0; j <= 10; j++)
 		{
+			{
 
-			_putchar('0' + j);
+			_putchar(j + '0');
+		}
 			_putchar('\n');
+		}
+
+		for (j = 11; j <= 14; j++)
+		{
+			{
+			_putchar(j);
+		}
+
+		_putchar('\n');
 		}
 	}
 }

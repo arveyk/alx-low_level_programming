@@ -1,25 +1,30 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * fizz_buzz - prints a pattern
+ * main - prints a pattern
  *
  * Return: void
  */
-void fizz_buzz(void)
+int main(void)
 {
 	int v;
 
-	for (v = 0; v <= 100; v++)
+	for (v = 1; v <= 100; v++)
 	{
-	printf("%d  ", v);
-	if (v % 15 == 0)
-		printf("FizzBuzz ", v);
+
+	if ((v % 15) == 0)
+		printf("FizzBuzz ");
 	else
-		if (v % 3 == 0)
-		printf("Fizz");
+		if ((v % 3) == 0)
+		printf("Fizz ");
 	else
-		if (v % 5 == 0)
-		printf("Buzz");
+		if ((v % 5) == 0)
+		printf("Buzz ");
+	else
+		printf("%d  ", v);
+
 	}
+	printf("\n");
+
+	return (0);
 }

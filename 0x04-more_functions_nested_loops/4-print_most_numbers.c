@@ -10,10 +10,17 @@ void print_most_numbers(void)
 
 	int y = 0;
 
-	while (y++)
+	while (y < 10)
 	{
-		_putchar('0' + y);
-	if (y == 2 || y == 4)
+	_putchar(y);
+	
+	y++;
+	if (y == 2) 
 		continue;
+	if (y == 4)
+		continue;
+
 	}
+
+	_putchar('\n');
 }

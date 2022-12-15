@@ -1,5 +1,5 @@
 #include "main.h"
-#include <sdio.h>
+#include <stdio.h>
 
 /**
  * main - checks if _isdigit functions
