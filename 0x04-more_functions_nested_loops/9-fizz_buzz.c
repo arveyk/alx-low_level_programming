@@ -12,13 +12,13 @@ int main(void)
 	for (v = 1; v <= 100; v++)
 	{
 
-	if ((v % 15) == 0)
+	if (v % 15 == 0)
 		printf("FizzBuzz ");
 	else
-		if ((v % 3) == 0)
+		if (v % 3 == 0)
 		printf("Fizz ");
 	else
-		if ((v % 5) == 0)
+		if (v % 5 == 0)
 		printf("Buzz ");
 	else
 		printf("%d  ", v);
