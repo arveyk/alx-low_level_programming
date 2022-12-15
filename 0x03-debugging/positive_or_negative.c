@@ -5,25 +5,22 @@
 
 /* betty style doc for function main goes there */
 /**
- * main -Entry point
+ * positive_or_negative - checks the sign of a number
  *
  * Return: Always 0(Success)
+ * @i: var whose number is to be tested
  */
-int positive_or_negative(void)
+void  positive_or_negative(int i)
 {
 
-	int n;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 
-	if (n == 0)
-		printf("%d is zero\n", n);
-	if (n < 0)
-		printf("%d is negative\n", n);
-	if (n > 0)
-		printf("%d is positive\n", n);
+	if (i == 0)
+		printf("%d is zero\n", i);
+	if (i < 0)
+		printf("%d is negative\n", i);
+	if (i > 0)
+		printf("%d is positive\n", i);
 
-	return (0);
 }
