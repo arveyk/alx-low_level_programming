@@ -20,7 +20,6 @@ int main(void)
 		v = l;
 		l = s;
 
-
 	}
 	putchar('\n');
 
