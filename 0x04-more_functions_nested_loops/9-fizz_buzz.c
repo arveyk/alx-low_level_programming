@@ -21,7 +21,11 @@ int main(void)
 		if (v % 5 == 0)
 		printf("Buzz ");
 	else
-		printf("%d ", v);
+	{
+		printf("%d", v);
+		if (v < 100)
+		printf(" ");
+	}
 
 	}
 	printf("\n");
