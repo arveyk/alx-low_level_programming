@@ -12,7 +12,7 @@ int main(void)
 	for (v = 1; v <= 100; v++)
 	{
 
-	if (v % 15 == 0)
+	if ((v % 5 == 0) && (v % 3 == 0))
 		printf("FizzBuzz ");
 	else
 		if (v % 3 == 0)
