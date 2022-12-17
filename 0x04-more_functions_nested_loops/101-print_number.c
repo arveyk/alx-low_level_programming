@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
  * print_number - prints number using _putchar
  *
@@ -9,5 +9,7 @@
 void print_number(int n)
 {
 
-	_putchar(n + 'n');
+	int y;
+	y = atoi(n);
+	_putchar(y);
 }
