@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * print_array - print the element of an array
@@ -11,7 +12,13 @@
 void print_array(int *a, int n)
 {
 
-	for (n = 0; n <= 4; n++)
-		printf("%d, ", (a[n]));
+	int r = sizeof(*a);
+
+	for (n = 0; n <= r; n++)
+	{
+		printf("%d", (a[n]));
+		if (n < r)
+			printf(", ");
+	}
 	printf("\n");
 }
