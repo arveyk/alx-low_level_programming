@@ -9,11 +9,14 @@
 int _strlen(char *s)
 {
 
-	int count = 0;
-	char arr[] = s;
+	int count;
 
-		while (arr[count] != '\0')
+		while ((s = *(s + 0)) != '\0')
+		{
 			count++;
+
+
+		}
 			
 	return (count);
 }

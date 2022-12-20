@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+#include <stdio.h>
 /**
  * _puts - prints string followed by ne line
  *
@@ -9,8 +9,7 @@
 void _puts(char *str)
 {
 
-	long unsigned int d = 0;
-	while (d != strlen(*str))
+	while (*str++ != '\0')
 	{
 		_putchar(*str);
 	}
