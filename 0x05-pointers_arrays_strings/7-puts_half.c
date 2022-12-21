@@ -1,29 +1,29 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * puts_half - prints half of the string
+ * puts2 - selects even numbers to be printed
  *
- * Return: void
- * @str: pointer to string.
+ * Return: none
+ * @str: pointer to string of numbers to be printed
  */
 void puts_half(char *str)
 {
 
-	int y = strlen(*str);
-		if (y % 2 == 0)
-		{
-			while (y++)
-				_putchar(*str + y);
+	int counter, k;
+	char i = *str;
 
-		}
+	while (i++ != '\0')
+		counter++;
+
+	while (i++ != '\0')
+	{
+		if (counter % 2 == 0)
+			for(k = 0; k++ >= (counter / 2); )
+				_putchar(*(str - 2));
 		else
-		{
-			y = (y - 1) / 2;
-			while (y++)
-		       _putchar(*str + y);
+			_putchar(*str++);
 
-		}
+	}
 	_putchar('\n');
 
 }
