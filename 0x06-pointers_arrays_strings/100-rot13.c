@@ -4,17 +4,17 @@
 #include <string.h>
 
 /**
- * *rot13 - used rot13 cipher to encrypt string
+ * *rot13 - used rot-13 cipher to encrypt string
  *
  * Return: result of encryption
- * @l: pointer to string to be encrypted
+ * @y: pointer to string to be encrypted
  */
 char *rot13(char *y)
 {
 
 	if (y == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	char *res = malloc(strlen(y));
@@ -26,19 +26,21 @@ char *rot13(char *y)
 
 		while (*curr_char != '\0')
 		{
-			if((*curr_char >= 97 && *curr_char <=122) || (*curr_char >= 65 && *curr_char <= 90))
-			{
-				if (*curr_char > 109 || (*curr_char > 77 && *curr_char < 91))
+
+		if ((*curr_char >= 97 && *curr_char <= 122) || (*curr_char >= 65 && *curr_char <= 90))
+		{
+			if (*curr_char > 109 || (*curr_char > 77 && *curr_char < 91))
 				{
 					*curr_char -= 13;
 				}
 			}
-			else {
+			else
+			{
 			*curr_char += 13;
 			}
 		}
 		curr_char++;
 	}
-	return res;
+	return (res);
 
 }
