@@ -7,14 +7,18 @@
  * @dest: pointer to 1st string.
  * @src: pointer to 2nd string.
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 
-	for (; *dest++ >= '\0'; )
+	char p;
+
+	n = *dest;
+
+	while (*dest++ != '\0')
 	{
-		*dest = *dest + *src;
-		if (*dest == '\0')
-			break;
+		p = *(dest + 1) +  *(src + 1);
+		n++;
+		p++;
 	}
 	return (0);
 }
