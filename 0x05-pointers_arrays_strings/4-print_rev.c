@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * print_rev - reveses the order of a string
@@ -9,23 +10,13 @@
 void print_rev(char *s)
 {
 
-	int len, p;
-	char str, end, g;
+	int len = strlen(s);
+	char *v = s + len - 1;
 
-	len = _strlen(*s);
-	str = *s;
-	end = *s;
-
-	for  (p = 0; p < len - 1; p++)
-		end++;
-	for (p = 0; p < len / 2; p++)
+	while (v >= s)
 	{
-	
-		g = end;
-		end = str;
-		str = g;
-
-		str++;
-		end--;
+		_putchar(*v);
+		v = v - 1;
 	}
+	_putchar('\n');
 }
