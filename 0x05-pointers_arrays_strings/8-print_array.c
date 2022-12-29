@@ -14,12 +14,12 @@ void print_array(int *a, int n)
 
 	int r = sizeof(*a);
 
-	if (r < 0)
-		r = (-1 * r);
-
-	for (n = 0; n <= r; n++)
+	if (r <= 0)
+		printf("\n");
+	else 
+		for (n = 0; n <= r; n++)
 	{
-		printf("%d", (a[n]));
+		printf("%d", *a++);
 		if (n < r)
 			printf(", ");
 	}

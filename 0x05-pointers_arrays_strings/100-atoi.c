@@ -9,12 +9,9 @@
 int _atoi(char *s)
 {
 
-	int t = strlen(s), i;
+	int t = strlen(s);
 
-		for (i = 0; i < t; i++)
-		{
-
-			t = t * 10 + (s[i] - '0');
-		}
+	while (*s++ != '\0')
+		t = t +  (*s++ + '0');
 	return (t);
 }
