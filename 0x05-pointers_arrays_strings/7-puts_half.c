@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * puts2 - selects even numbers to be printed
+ * puts_half - print second half of string
  *
  * Return: none
  * @str: pointer to string of numbers to be printed
@@ -18,7 +18,7 @@ void puts_half(char *str)
 		while (k++ < g)
 			_putchar(j++);
 	}
-	else 
+	else
 	{
 		k = (g - 1) / 2;
 		while (k++ < (g - 1))
