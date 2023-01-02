@@ -12,17 +12,21 @@
 char *rot13(char *y)
 {
 
+	char *res;
+	char *curr_char;
+	
 	if (y == NULL)
 	{
 		return (NULL);
 	}
 
-	char *res = malloc(strlen(y));
+
+	res = y;
 
 	if (res != NULL)
 	{
 		strcpy(res, y);
-		char *curr_char = res;
+		curr_char = res;
 
 		while (*curr_char != '\0')
 		{

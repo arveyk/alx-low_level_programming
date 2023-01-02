@@ -11,9 +11,15 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 
-	n = *src;
+	while (*dest++ != '\0')
+		n++;
+	while (*src != '\0')
+	{
 	
-	while (n++ == *dest++)
-		;
-		return (src);
+		dest = src;
+		++dest;
+	       	++src;
+	}
+
+		return (dest);
 }

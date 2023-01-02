@@ -6,14 +6,22 @@
  *
  * Return: no value
  * @a: pointer to array
- * @a: int to help in iteration
+ * @n: integer to be used in iteration
  */
 void reverse_array(int *a, int n)
 {
-	
-	
-	n = sizeof(a);
-	
-	for (; n-- != 0; )
-		*a = *a + 0;
+
+	int *ptr2, hold;
+
+	ptr2 = a + n - 1;
+
+
+	while (a < ptr2)
+	{
+		hold = *a;
+		*a = *ptr2;
+		*ptr2 = hold;
+		++a;
+		--ptr2;
+	}
 }
