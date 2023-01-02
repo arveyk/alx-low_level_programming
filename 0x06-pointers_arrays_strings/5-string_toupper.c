@@ -3,15 +3,21 @@
 /**
  * *string_toupper - converts lowercase letters to upper in a string
  *
- * Return: converted string
+ * Return: pointer to converted string
+ * @y: pointer to sring to be converted
  */
 char *string_toupper(char *y)
 {
 
-	while (*y != '\0')
-	{	for (;*y >= 'a' && *y <= 'z';)
-		*y -= 32;
-		y++;
+	int p = 0;
+
+	while (*(y + p) != '\0')
+	{
+		if (*(y + p) >= 'a' && *(y + p) <= 'z')
+		{
+			*(y + p) -= 32;
+		}
+		p++;
 	}
 	return (y);
 
