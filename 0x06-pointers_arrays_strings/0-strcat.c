@@ -10,14 +10,17 @@
 char *_strcat(char *dest, char *src)
 {
 
-	int u;
+	int g = 0;
 
-	while (*dest++ != '\0')
+	while (*dest++ != 0)
+		g++;
+	g -= 1;
+	
+		while (*src++  != '\0')
 	{
-		u++;
+		*(dest + g) = *src;
+		g++;
 	}
-
-	while ((*dest++ = *src++)  != '\0')
-		;
-		return (dest);
+	
+	return (dest);
 }
