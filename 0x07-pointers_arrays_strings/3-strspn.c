@@ -11,8 +11,14 @@
 unsigned int  _strspn(char *s, char *accept)
 {
 
-	unsigned int j;
-
-	j = sizeof(*s++ == *accept++) + 1;
+	unsigned int j = 0;
+	
+	while (*s++  != '\0')
+	{
+		if (s == accept)
+		{
+			j++;
+		}
+	}
 	return (j);
 }
