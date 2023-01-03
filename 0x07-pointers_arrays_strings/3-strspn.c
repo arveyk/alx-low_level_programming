@@ -8,12 +8,11 @@
  * @s: string to be searched
  * @c: character to be found.
  */
-char *_strchr(char *s, char c)
+unsigned int  _strspn(char *s, char *accept)
 {
-	
-	for(; *s++ == c++; )
-		if (*s != c)
-			return(NULL);
 
-	return (s);
+	unsigned int j;
+
+	j = sizeof(*s++ == *accept++) + 1;
+	return (j);
 }
