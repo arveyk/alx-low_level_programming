@@ -17,7 +17,7 @@ char *_memset(char *s, char b, unsigned int n)
 	{
 
 		*s = b;
-		counter = counter + sizeof(s);
+		counter += sizeof(char);
 		s++;
 	}
 	return (s);
