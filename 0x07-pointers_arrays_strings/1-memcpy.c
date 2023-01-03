@@ -12,10 +12,15 @@
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 
-	int e = sizeof(src);
+	unsigned int e = 0;
 
-	while()
+
+	while(e++ < n)
+	{
 	
-	memcpy(dest, src, n);
+		*dest = *src;
+		dest++;
+		src++;
+	}
 	return (dest);
 }
