@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+#include <stdio.h>
 /**
  * print_chessboard - prints chessboard with letters representing chess pieces
  *
@@ -9,16 +10,16 @@
 void print_chessboard(char (*a)[8])
 {
 	
-	long unsigned int k = 0;
-	long unsigned int u = 0;
+	int k = 0;
+	int u;
 	
-	while (k++ <= 8) 
+	while (k < 8) 
 	{
-		while (u++ <= 8)
-		{	_putchar(*(*(a + k) + u));
-
-		}
+		u = 0;
+		while (u < 8)
+			_putchar(a[k][u++]);
 		_putchar('\n');
+		 k++;
 	}
 
 }
