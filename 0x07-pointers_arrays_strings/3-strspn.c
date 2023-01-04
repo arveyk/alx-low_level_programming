@@ -1,24 +1,21 @@
 #include "main.h"
-#include <stddef.h>
+#include <string.h>
 
 /**
- * _strchr - locate the character c in string s.
+ * _strspn -locate the character c in string s.
  *
- * Return: pointer to the first occurence of 
+ * Return: pointer to the first occurence of
  * @s: string to be searched
- * @c: character to be found.
+ * @accept: character to be found.
  */
 unsigned int  _strspn(char *s, char *accept)
 {
 
 	unsigned int j = 0;
-	
-	while (*s++  != '\0')
+
+	while (*s && strchr(accept, *s++))
 	{
-		if (s == accept)
-		{
-			j++;
-		}
+		j++;
 	}
 	return (j);
 }
