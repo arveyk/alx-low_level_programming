@@ -12,9 +12,31 @@
 char *_strpbrk(char *s, char *accept)
 {
 
-	while (*s++ == *accept++)
-		if (*s != *accept)
-			return (NULL);
+	int len1, len2, r, t, y;
 
-	return (s);
+	len1 = 0;
+	len2 = 0;
+
+	while (s[len1] != '\0')
+		len1++;
+
+	while (accept[len2])
+		len2++;
+
+	for (r = 0; r < len1; r++)
+	{
+
+		for (t = 0; t < len2; t++)
+		{
+
+			if (s[r] == accept[t])
+			{
+
+				for (y = r; s[y] != '\0'; y++)
+					return ((s + y));
+			}
+		}
+	}
+
+	return (NULL);
 }
