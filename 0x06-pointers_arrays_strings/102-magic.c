@@ -1,13 +1,7 @@
 #include <stdio.h>
 
-/**
- * main - pointer arithmetics and how the computer stores variables.
- *
- * Return: always 0.
- */
 int main(void)
 {
-   
   int n;
   int a[5];
   int *p;
