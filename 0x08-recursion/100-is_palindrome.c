@@ -7,19 +7,26 @@
  *
  * Return: Always 0
  */
+
 int is_palindrome(char *s)
 {
-	int u = strlen(s), g, h;
-	char **y;
-	g = 0;
-	h = 0;
+	int left = 0;
+	int right = strlen(s);
 
-       	y = s;
+	if (NULL == s || left < 0 || right < 0)
+		return (0);
 	
-	return(is_palindrome(*y[u--] = s[g++]));
+	if (left >= right)
+		return (0);
+
+	if (s[0] == s[right])
+	{
+		return (is_palindrome(s));
+		left++;
+		right--;
+	}
 	
-		if ((*y[h++] == s[h++]) != '\0')
-			return (1);
+				
 	return (0);
 
 }
