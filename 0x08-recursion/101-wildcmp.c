@@ -11,26 +11,10 @@
 int wildcmp(char *s1, char *s2)
 {
 
-static int x = 0;
-
-	int len1 = strlen(s1);
-	int len2 = strlen(s2);
-
-static int c = 0;
-
-	if (len1 != len2)
-		return (0);
-	else if (x < len1)
-	{
-
-		if (s1[x] == s2[x])
-			c++;
-		x++;
-		wildcmp(s1, s2);
-	}
-
-	if (c == x)
+	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
+	if (*s1 > *s2 || *s1 < *s2)
+		return (0);
 
-	return (0);
+	return (wildcmp(++s1, ++s2));
 }
