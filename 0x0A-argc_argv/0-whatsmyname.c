@@ -4,6 +4,8 @@
  * main - program that prints it name even without recompling after renaming
  *
  * Return: Always 0
+ * @agrc: argument counter
+ * @argv: argument vector
  */
 int main(int argc, char *argv[])
 {
