@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - program that prints it name even without recompling after renaming
+ * main - prints its name.
  *
- * Return: Always 0
- * @agrc: argument counter
- * @argv: argument vector
+ * Return: Always 0.
+ * @argv: points to argument character
+ * @argc: counters the number of parameters
  */
 int main(int argc, char *argv[])
 {
