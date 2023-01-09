@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main -prints the first 98 numbers of the Fibonacci sequence
+ * main -prints the first 50 Fibonacci numbers
  *
  * Return: Always 0.
  */
@@ -11,22 +11,25 @@ int main(void)
 	long int prev1 = 2;	/* number n-1 */
 	long int prev2 = 1;	/* number n-2 */
 
-	int s = 1;
-	
-	do
-       	{
-		printf("%d, ", s++);
-	}while (s < 3);
+	int s;
 
-	for (s = 4; s++ < 98; )
+
+	for (s = 0; s++ <= 50;)
 	{
-	       
-		fib = prev1 + prev2;
+		if (s < 3) do
+		{
+			printf("%d, ", s++);
+		}while (s < 3);
+
+		else 
+		{
+			fib = prev1 + prev2;
 		prev2 = prev1;
 		prev1 = fib;
 		printf("%ld", fib);
-		if (s < 98)
+		if (s < 50)
 			printf(", ");
+		}
 
 
 
