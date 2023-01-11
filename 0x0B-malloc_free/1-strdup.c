@@ -17,10 +17,10 @@ char *_strdup(char *str)
 	size_t size;
 	char *b;
 
-	size = strlen(str) + 1;
-
 	if (str == NULL)
 		return (NULL);
+	size = strlen(str) + 1;
+
 
 	b = malloc(size);
 
