@@ -8,28 +8,23 @@
  */
 int main(int argc, char *argv[])
 {
-	int add = 0, i;
-	int u;
-
-	if (argc == 0)
-		printf("0\n");
-	else 
+	int add = 0;
+	int x, p;
+	
+	if (argc != 3)
 	{
-		for (i = 0; i <= argc - 1; i++)
-		
-		u = atoi(argv[i]);
-
-		if (u < '0'|| u > '9')
-		{
-			printf("Error\n");
-			return (1);
-		}
-		else
-		{
-			add += u; 
-			printf("%d\n", add);
-		}	
+		printf("Error\n");
+		return (1);
 	}
-				
-				return (0);
+	p = atoi(argv[1]);
+	x = atoi(argv[2]);
+
+	if ((p <= '/' || p >= ':') || (x <= '/' || x >= ':'))
+		printf("Error\n");
+
+	else 
+		add += (p + x);
+	printf("%d\n", add);
+
+	return (0);
 }
