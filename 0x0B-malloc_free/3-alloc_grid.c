@@ -17,25 +17,27 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 	if (!arrp)
+	{
+		free(arrp);
 		return (NULL);
+	}
 
 	for (k = 0; k < height; k++)
 		arrp[k] = (int *)malloc(width * sizeof(int));
 	if (!arrp)
+	{
+		for (l = 0; l < height; l++)
+			free(arrp[l]);
+		free(arrp);
 		return (NULL);
+	}
 
 	for (k = 0; k < height; k++)
 	{
 		for (l = 0; l < width; l++)
 			arrp[k][l] = 0;
 	}
-	if (!arrp)
-	{
-		for (k = 0; k < height; k++)
-			free(arrp[k]);
 
-		free(arrp);
-	}
 	return (arrp);
 }
 
