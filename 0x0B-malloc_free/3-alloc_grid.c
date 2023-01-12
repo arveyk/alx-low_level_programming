@@ -11,24 +11,24 @@
  */
 int **alloc_grid(int width, int height)
 {
-
-	int **u;
 	int k, l;
+	int **arrp = (int **)malloc(height * sizeof(int *));
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-
-	u = malloc((sizeof(int)) * height);
+	if (!arrp)
+		return (NULL);
 
 	for (k = 0; k < height; k++)
-		u[k] = malloc(sizeof(int) * width);
+		arrp[k] = (int *)malloc(width * sizeof(int));
+	if (!arrp)
+		return (NULL);
 
 	for (k = 0; k < height; k++)
 	{
 		for (l = 0; l < width; l++)
-			u[k][l] = 0;
+			arrp[k][l] = 0;
 	}
-
-	return (u);
+	return (arrp);
 }
 
