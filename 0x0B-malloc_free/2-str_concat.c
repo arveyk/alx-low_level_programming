@@ -19,12 +19,17 @@ char *str_concat(char *s1, char *s2)
 	int set = 0;
 
 
+	if (*s1 == '\0' || *s2 == '\0')
+		return (NULL);
 	for (g = 0; s1[g] != '\0'; g++)
 	{
 		len++;
 		set++;
 	}
 	q = malloc(sizeof(char) * len);
+
+	if (!q)
+		return (NULL);
 
 	for (g = 0; s1[g] != '\0'; g++)
 		q[g] = s1[g];
