@@ -29,6 +29,13 @@ int **alloc_grid(int width, int height)
 		for (l = 0; l < width; l++)
 			arrp[k][l] = 0;
 	}
+	if (!arrp)
+	{
+		for (k = 0; k < height; k++)
+			free(arrp[k]);
+
+		free(arrp);
+	}
 	return (arrp);
 }
 
