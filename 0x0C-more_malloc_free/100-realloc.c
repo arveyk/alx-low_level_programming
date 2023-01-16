@@ -2,33 +2,57 @@
 #include <stdlib.h>
 
 /**
- * main -finds the product of two numbers
- * @num1: first number
- * @num2: second number
+ * _realloc - reallocates a memory pointer using malloc and free.
+ *
+ * Return: No value
+ * @ptr:  pointer to the array to be reallocated
+ * @old_size: the size of the old mem block.
+ * @new_size: size of new mem allocation
  */
-int main(int argc, char *argv[])
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	long num1;
-	long num2;
-	long mul;
-	
-	if (argc !3)
-	{
-		_putchar(Error);
-		exit (98);
-	}
-	else 
-	{
-		if(num1 < '1' || num1 > '9' || num2 < '1' || num2 > '9')
-		_putchar(Error);
+	char *temp;
+	unsigned int i;
 
-		atoi(argv[1]) = num1;
-		atoi(argv[2]) = num2;
+	temp = ptr;
+
+	ptr = malloc(old_size);
+	if (!ptr)
+	{
+		free(ptr);
+		return (NULL);
 	}
 
-	mul = num1 * num2;
+	if (new_size == 0 && ptr != NULL)
+	{
+		return (ptr);
+	}
 
-	printf("%li\n", mul);
+	if (new_size == old_size)
+	{
+		return (ptr);
+	}
+	if (ptr == NULL)
+	{
+	ptr = malloc(new_size);
+		if (!ptr)
+		{
+		free(ptr);
+		return (NULL);
+		}
+	}
 
-	return (0);
+	else
+	{
+	free(ptr);
+	for (i = 0; i < old_size; i++)
+	temp++;
+	ptr = malloc(new_size);
+	if (!ptr)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	}
+	return (ptr);
 }
