@@ -2,14 +2,24 @@
 #include <stdio.h>
 
 /**
- * reverse_array - reverses the elements of an array
- *
+ * print_number - prints number using _putchar
  * Return: no value
- * @a: pointer to array
- * @a: int to help in iteration
+ * @n: the number to be printed
  */
 void print_number(int n)
 {
-	
-	_putchar((char)n);
+if (n < 0)
+{
+	_putchar('-');
+	n = -n;
+}
+if (n == 0)
+{
+	_putchar(n);
+}
+
+if (n / 10)
+	print_number(n / 10);
+
+_putchar((n % 10) + '0');
 }

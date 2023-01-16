@@ -10,17 +10,23 @@
 char *_strcat(char *dest, char *src)
 {
 
-	int g = 0;
+	int r;
 
-	while (*dest++ != 0)
-		g++;
-	g -= 1;
-	
-		while (*src++  != '\0')
+	while (*dest)
 	{
-		*(dest + g) = *src;
-		g++;
+		r++;
+		dest++;
 	}
-	
+
+	*dest = *src;
+	while (*src)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+
+	}
+	*dest = '\0';
+
 	return (dest);
 }
