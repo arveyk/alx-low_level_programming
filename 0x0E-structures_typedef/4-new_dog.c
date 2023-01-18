@@ -1,4 +1,6 @@
 #include "dog.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * new_dog - creates a new dog
@@ -8,11 +10,26 @@
  *
  * Return: pointer to dog_t
  */
-dog_t *new_dog((char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-char *ptr, *ptr2;
+	char *ptr, *ptr2;
+	
+	dog_t new_dog;
 
-ptr = (char *)malloc(sizeof()name;
-ptr2 = owner
 
+/**
+ * new dog -new struct dog declaration
+ *
+ */
+	ptr = (char *)malloc(sizeof(name));
+	if (!name)
+		return (NULL);
+	ptr2 = (char *)malloc(sizeof(owner));
+	if (!ptr2)
+		return (NULL);
+	
+	new_dog.name = ptr;
+	new_dog.age = age;
+	new_dog.owner = ptr2;
+	return (new_dog);
 }
