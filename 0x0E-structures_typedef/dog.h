@@ -5,13 +5,14 @@
  * struct dog - holds info about Poppy
  * @name: name of Poppy
  * @age: how old he/ she is
- * @wner: owner's name
+ * @owner: owner's name
  */
 
-struct dog{
-char *name;
-float *age;
-char *owner ;
-};
+typedef struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+} dog_t;
 
 #endif
