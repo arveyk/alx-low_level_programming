@@ -19,7 +19,7 @@ void print_chessboard(char (*a)[8])
 	{
 		for (;u <= 8; u++)
 		{
-			_putchar(a[k][u]);
+			_putchar(*(*a + k * 8 + u));
 		}
 		_putchar('\n');
 	}

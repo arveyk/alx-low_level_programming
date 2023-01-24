@@ -9,12 +9,20 @@
  */
 void print_buffer(char *b, int size)
 {
-
-	char s = *b;
+	int i = 0;
+	
 	if (size <= 0)
+	{
 		printf("\n");
+	}
 	else 
-		for (;s++ <= size; )
-		putc((s) , stdout);
+		while (i <= size)
+	{
+		if (i == (10 * sizeof(int)))
+		printf("\n");
+	
+		putchar(*b);
+		b++;
+		i++;
+	}
 }
-
