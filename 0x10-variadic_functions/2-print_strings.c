@@ -13,22 +13,20 @@
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 
-	unsigned int w;
-	va_list args;
-	char *s;
+	unsigned int w = 0;
+	char *p;
+	va_list lizts;
 
 
-	va_start(args, n);
+	va_start(lizts, n);
 
-	for (w = 0; w < n; w++)
+	while (w++ < n)
 	{
-		s = va_arg(args, char *);
-		
-		printf("%c", *(s++));
-		if (w < (n - 1))
-			printf("%c", *separator);
+		p = va_arg(lizts, char *);
+		printf("%s", p);
+		if (w < n)
+			printf("%s", separator);
 	}
-
-	va_end(args);
+	va_end(lizts);
 	putchar('\n');
 }
