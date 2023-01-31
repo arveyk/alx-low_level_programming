@@ -11,7 +11,7 @@
  */
 size_t print_list(const list_t *h)
 {
-	int count = 0;
+	size_t count = 0;
 	list_t *curr_node = (list_t *)h;
 
 	while (curr_node != NULL)
