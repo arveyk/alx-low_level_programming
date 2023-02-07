@@ -14,6 +14,9 @@ int get_bit(unsigned long int n, unsigned int index)
 	bin_rep *y = (bin_rep *)malloc(sizeof(bin_rep));
 	int i = 0;
 
+	if (!y)
+		return (-1);
+
 	while (n != (n / 2))
 	{
 		y->a[i] = n % 2;
