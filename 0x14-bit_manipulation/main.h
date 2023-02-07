@@ -1,6 +1,19 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/**
+ * struct binary  - structure to store the binary form of a number
+ * @a: Array to store the binary
+ *
+ * Description: binary structure
+ */
+
+typedef struct binary
+{
+
+	unsigned int a[12];
+} bin_rep;
+
 int _putchar(char c);
 
 unsigned int binary_to_uint(const char *b);
