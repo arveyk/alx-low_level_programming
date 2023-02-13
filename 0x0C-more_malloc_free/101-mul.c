@@ -4,27 +4,29 @@
 
 /**
  * main -finds the product of two numbers
- * @num1: first number
- * @num2: second number
+ * @argc: counter of number of arguments from terminal
+ * @argv: an array of pointers to arguments
+ *
+ * Return: Always 0
  */
 int main(int argc, char *argv[])
 {
 	long num1;
 	long num2;
 	long mul;
-	
+
 	if (argc != 3)
 	{
 		_putchar('\n');
-		exit (98);
+		exit(98);
 	}
 
-	else 
+	else
 	{
-			num1 = atoi(argv[1]);
-			num2 = atoi(argv[2]);
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
 
-		if(num1 < '1' || num1 > '9' || num2 < '1' || num2 > '9')
+		if (num1 < '1' || num1 > '9' || num2 < '1' || num2 > '9')
 		_putchar('\n');
 
 	}
