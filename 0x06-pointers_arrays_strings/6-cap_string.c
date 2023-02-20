@@ -20,6 +20,18 @@ char *cap_string(char *ptr)
 		if (ptr[p - 1] == 32 || ptr[p - 1] == '\t' || ptr[p - 1] == '\n')
 			if (ptr[p] >= 'a' && ptr[p] <= 'z')
 				ptr[p] -= 32;
+		if (ptr[p - 1] == '"' || ptr[p - 1] == ',' || ptr[p - 1] == '.')
+			if (ptr[p] >= 'a' && ptr[p] <= 'z')
+				ptr[p] -= 32;
+		if (ptr[p - 1] == ')' || ptr[p - 1] == '{' || ptr[p - 1] == '}')
+			if (ptr[p] >= 'a' && ptr[p] <= 'z')
+				ptr[p] -= 32;
+		if (ptr[p - 1] == '?' || ptr[p - 1] == '!' || ptr[p - 1] == ';')
+			if (ptr[p] >= 'a' && ptr[p] <= 'z')
+				ptr[p] -= 32;
+		if (ptr[p - 1] == '(')
+			if (ptr[p] >= 'a' && ptr[p] <= 'z')
+				ptr[p] -= 32;
 	}
 	return (ptr);
 
