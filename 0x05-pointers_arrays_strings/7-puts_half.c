@@ -21,8 +21,10 @@ void puts_half(char *str)
 		}
 	}
 	else
+		if (g % 2 == 1)
 	{
 		k = (g - 1) / 2;
+		k += 1;
 		while (k < g)
 		{
 			_putchar(str[k]);
