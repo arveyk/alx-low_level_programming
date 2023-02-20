@@ -1,27 +1,26 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * *string_toupper - converts lowercase letters to upper in a string
+ * *cap_string - capitalizes the words of a string.
  *
  * Return: pointer to converted string
- * @y: pointer to sring to be converted
+ * @ptr: pointer to string to be capitalized
  */
-char *cap_string(char *)
+char *cap_string(char *ptr)
 {
 
-	int p = 0, in = out = 0;
-/* in for inside a word
- * out for outside a word
- * */
-	while (*(y + p) != '\0')
+	int p;
+	int len = strlen(ptr);
+
+	if (ptr[0] >= 'a' && ptr[0] <= 'z')
+		ptr[0] = ptr[0] - 32;
+	for (p = 1; p < len; p++)
 	{
-		if (*(y + p) = )
-		if (*(y + p) >= 'a' && *(y + p) <= 'z')
-		{
-			*(y + p) -= 32;
-		}
-		p++;
+		if (ptr[p - 1] == 32 || ptr[p - 1] == '\t' || ptr[p - 1] == '\n')
+			if (ptr[p] >= 'a' && ptr[p] <= 'z')
+				ptr[p] -= 32;
 	}
-	return (y);
+	return (ptr);
 
 }
