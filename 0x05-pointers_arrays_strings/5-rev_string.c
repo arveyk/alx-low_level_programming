@@ -5,21 +5,18 @@
  * rev_string - reverses string
  *
  * Return: none
- * @ s: pointer to string to be reversed
+ * @s: pointer to string to be reversed
  */
 void rev_string(char *s)
 {
+	int len = strlen(s), i;
+	int temp;
 
-	char y [strlen(s)]= *s;
-	int l, t, r;
-
-	for (l = 0, t = strlen(s) - 1; l < t; l++, t++)
+	for (i = 0; i < len / 2; i++)
 	{
-	
-		r =  y[l];
-		y[l] = y[t];
-		y[t] = r;
-	}
-	
 
+		temp = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = temp;
+	}
 }
