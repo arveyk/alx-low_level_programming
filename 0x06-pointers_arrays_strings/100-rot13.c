@@ -12,39 +12,21 @@
 char *rot13(char *y)
 {
 
-	char *res;
-	char *curr_char;
-	
+	int b = 0;
+
 	if (y == NULL)
 	{
 		return (NULL);
 	}
 
 
-	res = y;
-
-	if (res != NULL)
-	{
-		strcpy(res, y);
-		curr_char = res;
-
-		while (*curr_char != '\0')
+		while (y[b++] != '\0')
 		{
-
-		if ((*curr_char >= 97 && *curr_char <= 122) || (*curr_char >= 65 && *curr_char <= 90))
-		{
-			if (*curr_char > 109 || (*curr_char > 77 && *curr_char < 91))
-				{
-					*curr_char -= 13;
-				}
-			}
-			else
-			{
-			*curr_char += 13;
-			}
+				if ((y[b] >= 'a' && y[b] <= 'm') || (y[b] >= 'A' && y[b] <= 'M'))
+					y[b] += 13;
+				if ((y[b] >= 'n' && y[b] <= 'Z') || (y[b] >= 'N' && y[b] <= 'Z'))
+					y[b] -= 13;
 		}
-		curr_char++;
-	}
-	return (res);
+	return (y);
 
 }
