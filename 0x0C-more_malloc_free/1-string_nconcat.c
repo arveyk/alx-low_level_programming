@@ -25,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= len2)
 	{
-		for (u = 0; s2 && u < n; u++)
+		for (u = 0; s2 && u < len2; u++)
 			ptr[v + u] = s2[u];
 	}
 	else
