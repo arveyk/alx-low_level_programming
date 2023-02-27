@@ -11,9 +11,9 @@
  */
 int main(int argc, char *argv[])
 {
-	long num1;
-	long num2;
-	long mul;
+	long long num1;
+	long long num2;
+	long long mul;
 
 	if (argc != 3)
 	{
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
 	mul = num1 * num2;
 
-	printf("%li\n", mul);
+	printf("%lld\n", mul);
 
 	return (0);
 }
