@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * print_num - prints a number using recursion
+ * @m: number to be printed
+ *
+ * Return: no value
+ */
+
 void print_num(int m)
 {
 	if (m / 10)
@@ -45,7 +52,7 @@ int main(int argc, char *argv[])
 			}
 			_putchar('\n');
 			exit(98);
-			
+
 		}
 
 	}
