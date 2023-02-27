@@ -16,13 +16,19 @@ void print_buffer(char *b, int size)
 		printf("\n");
 	}
 	else 
-		while (i <= size)
+		while (i < size)
 	{
-		if (i == (10 * sizeof(int)))
-		printf("\n");
-	
-		putchar(*b);
-		b++;
+		
+		if (b[i] < ' ' || b[i] > '~')
+			b[i] = '*';
+		if ((i % 10 == 0) && b)
+		{
+		printf("\n%p", &b[i]);
+		}
+		if ((i % 2 == 0) && b)
+			printf("\t");
+		printf("%x2", b[i]);
 		i++;
 	}
+	printf("\n");
 }
