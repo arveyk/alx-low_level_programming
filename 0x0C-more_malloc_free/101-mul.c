@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void print_num(int m)
+{
+	if (m / 10)
+		print_num(m / 10);
+	_putchar((m % 10) + '0');
+}
+
 /**
  * main -finds the product of two numbers
  * @argc: counter of number of arguments from terminal
@@ -9,11 +16,15 @@
  *
  * Return: Always 0
  */
+
+
 int main(int argc, char *argv[])
 {
-	long long num1;
-	long long num2;
-	long long mul;
+	long num1;
+	long num2;
+	long mul;
+	char Err[] = "Error";
+	size_t y = 0;
 
 	if (argc != 3)
 	{
@@ -25,15 +36,24 @@ int main(int argc, char *argv[])
 	{
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[2]);
-
-		if (num1 < '1' || num1 > '9' || num2 < '1' || num2 > '9')
-		_putchar('\n');
+		if (!num1 || !num2 || num1 < 0 || num2 < 0)
+		{
+			while (Err != NULL)
+			{
+				_putchar(Err[y]);
+				y++;
+			}
+			_putchar('\n');
+			exit(98);
+			
+		}
 
 	}
 
 	mul = num1 * num2;
 
-	printf("%lld\n", mul);
+	print_num(mul);
+	_putchar('\n');
 
 	return (0);
 }
