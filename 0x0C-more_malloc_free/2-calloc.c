@@ -12,15 +12,20 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 
-	void *arr;
+	size_t p;
+	void *arr = NULL;
+	char *ptr = NULL;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	arr = malloc(sizeof(int) * size * nmemb);
+	arr = malloc(sizeof(void *) * size * nmemb);
 
-	if (!arr)
+	ptr = (char *)arr;
+	for (p = 0; p < (nmemb * size); p++)
+		ptr[0] = '0';
+	if (!arr || !ptr)
 		return (NULL);
-	
+
 	return (arr);
 }
