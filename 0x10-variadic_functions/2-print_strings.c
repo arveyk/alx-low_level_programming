@@ -23,6 +23,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	while (w++ < n)
 	{
 		p = va_arg(lizts, char *);
+		if (p == NULL)
+			printf("null");
 		printf("%s", p);
 		if (w < n)
 		{
