@@ -25,7 +25,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		p = va_arg(lizts, char *);
 		printf("%s", p);
 		if (w < n)
+		{
+			if (separator == NULL)
+				continue;
 			printf("%s", separator);
+		}
 	}
 	va_end(lizts);
 	putchar('\n');
