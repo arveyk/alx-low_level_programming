@@ -17,12 +17,13 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	char *fmt = (char *)format;
-	
+
 	va_list lizts;
 
 	va_start(lizts, format);
 	while (*fmt)
-	{	switch (*fmt)
+	{
+		switch (*fmt)
 		{
 			case 'c':
 				c = va_arg(lizts, int);
@@ -47,5 +48,5 @@ void print_all(const char * const format, ...)
 	}
 	va_end(lizts);
 	printf("\n");
-	
+
 }
