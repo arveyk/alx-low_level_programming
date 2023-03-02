@@ -15,7 +15,7 @@ struct dog
 	char *name;
 	float age;
 	/**
-	 * owner - name of the owners
+	 * @owner: name of the owners
 	 *
 	 * Description: the dogs best friend
 	 */
