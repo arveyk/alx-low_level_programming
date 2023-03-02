@@ -12,7 +12,17 @@
 
 struct dog
 {
+	/**
+	 * @name: name of the dog
+	 *
+	 * Description: what the owner call him/ her
+	 */
 	char *name;
+	/**
+	 * @age: age of the dog
+	 *
+	 * Description: the number of years the dog has lived
+	 */
 	float age;
 	/**
 	 * @owner: name of the owners
