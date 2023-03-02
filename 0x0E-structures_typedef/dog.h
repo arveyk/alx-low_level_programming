@@ -12,18 +12,7 @@
 
 struct dog
 {
-	/**
-	 * @name - name of specific dog
-	 *
-	 * Description - just its name
-	 */
 	char *name;
-	/**
-	 * @name - age of the dog
-	 *
-	 * Description: just the age of a given dog in year (dg years or
-	 * man yrs?)
-	 */
 	float age;
 	/**
 	 * owner - name of the owners
