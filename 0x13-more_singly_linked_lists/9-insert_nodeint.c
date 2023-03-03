@@ -1,7 +1,8 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * insert_nodeint_at_index
+ * insert_nodeint_at_index - inserts a node at point idx
  * @head: pointer to pointer to head
  * @idx: index where new node should be added
  * @n: data for new node
@@ -12,12 +13,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 
 	listint_t *new_n = (listint_t *)malloc(sizeof(listint_t));
-	listiny_t *ptr = *head;
+	listint_t *ptr = *(head);
 	listint_t *temp = NULL;
 
 	unsigned int k = 0;
 
-	for (; k < idx - 2; k++)
+	for (; k < idx - 1; k++)
 		ptr = ptr->next;
 
 	temp = ptr->next;
