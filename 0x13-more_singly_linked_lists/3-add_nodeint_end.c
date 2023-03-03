@@ -30,5 +30,5 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 			ptr = ptr->next;
 		ptr->next = new_g;
 	}
-	return (ptr);
+	return (new_g);
 }
