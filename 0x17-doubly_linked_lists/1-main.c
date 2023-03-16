@@ -4,12 +4,13 @@
 #include "lists.h"
 
 /**
- * main - does some stuff
+ * main - creates new list
  *
  * Return: Always EXIT_SUCCESS.
  */
 int main(void)
 {
+
 	dlistint_t *head;
 	dlistint_t *new;
 	dlistint_t hello = {8, NULL, NULL};
@@ -28,8 +29,8 @@ int main(void)
 	new->next = head;
 	new->prev = NULL;
 	head = new;
-	n = print_dlistint(head);
-	printf("->%lu elements\n", n);
+	n = dlistint_len(head);
+	printf("-> %lu elements\n", n);
 	free(new);
 	return (EXIT_SUCCESS);
 }
