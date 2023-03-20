@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - prints its opcode
@@ -8,27 +7,13 @@
  */
 int main(void)
 {
-	u_int64_t msr;
+	char c;
+	FILE *fp = NULL;
+	 fp = fopen(100-main_opcode.c, "r");
+	 
+	 while ((c = getc(fp)) != EOF)
+		 putchar(c);
+	 fclose(fp);
 
-asm volatile ( "rdtsc\n\t"    // Returns the time in EDX:EAX.
-        "shl $32, %%rdx\n\t"  // Shift the upper bits left.
-        "or %%rdx, %0"        // 'Or' in the lower bits.
-        : "=a" (msr)
-        :
-        : "rdx");
-
-printf("msr: %lx\n", msr);
-
-// Do other work...
-
-// Reprint the timestamp
-asm volatile ( "rdtsc\n\t"    // Returns the time in EDX:EAX.
-        "shl $32, %%rdx\n\t"  // Shift the upper bits left.
-        "or %%rdx, %0"        // 'Or' in the lower bits.
-        : "=a" (msr)
-        :
-        : "rdx");
-
-printf("msr: %lx\n", msr);
 	return (0);
 }

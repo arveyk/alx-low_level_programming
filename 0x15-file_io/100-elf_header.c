@@ -1,27 +1,22 @@
-#include <elf.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
-#if defined(__LP64__)
-#define Elfw(type) Elf64_
-#else
-#define Elfw(type) Elf32_
-#endif
+void disp_elf(const char *elf);
 
-void read_elf_header(const char *elf_filename)
+int main(void)
 {
 
-	Elfw(Ehdr) header;
+	disp_elf("elf_filename");
+	return (0);
+}
+void disp_elf(const char *elf_filename)
+{
+
 	FILE *file = fopen(elf_filename, "rb");
 	if (file)
 	{
-	
-		fread(&header, sizeof(header), 1, file);
-		if (memcmp(header.e_ident, ELFMAG, SELFMAG) == 0)
-		{
-		}
-		fclose(file);
+		write(1, file, 1);
 	}
-
-
+		fclose(file);
 }
