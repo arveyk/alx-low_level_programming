@@ -1,0 +1,27 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - Intializes parameter for _pow_rec.. function
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+
+	int r;
+
+	r = _pow_recursive(1, 10);
+	printf("%d\n", r);
+	r = _pow_recursive(1024, 0);
+	printf("%d\n", r);
+	r = _pow_recursive(2, 16);
+	printf("%d\n", r);
+	r = _pow_recursive(5, 2);
+	printf("%d\n", r);
+	r = _pow_recursive(5, -2);
+	printf("%d\n", r);
+	r = _pow_recursion(-5, 3);
+	printf("%d\n", r);
+	return (0);
+}
