@@ -26,6 +26,13 @@ int main(int argc, char *argv[])
 	else
 	{
 		change = atoi(argv[count]);
+		if (change < 0)
+		{
+			printf("0\n");
+			return (1);
+		}
+
+
 		switch (change)
 		{
 			case 25:
