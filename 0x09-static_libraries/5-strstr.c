@@ -23,23 +23,23 @@ char *_strstr(char *haystack, char *needle)
 		{
 			for (n = 0; n < v; n++)
 			{
-			
+
 				if (haystack[b] == needle[n])
 				{
-				
+
 					b++;
 					count++;
 				}
 			}
-		
+
 		if (count == b)
 		{
-		
+
 			for (m = b - v; haystack[m] != '\0'; m++)
 				return (haystack);
-		}	
 		}
-	
+		}
+
 	}
 	return (NULL);
 }
