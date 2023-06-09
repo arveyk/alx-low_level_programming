@@ -25,8 +25,6 @@ int main(int argc, char *argv[])
 
 	else
 	{
-	while (count < argc)
-	{
 		change = atoi(argv[count]);
 		switch (change)
 		{
@@ -49,8 +47,6 @@ int main(int argc, char *argv[])
 				num += rem2;
 				break;
 		}
-		count++;
-	}
 	}
 	printf("%d\n", num);
 	return (0);

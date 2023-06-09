@@ -10,18 +10,18 @@
  */
 int main(int argc, char *argv[])
 {
-	
+
 	int mult = 1;
 	int count = 1;
 	int num;
-	
+
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
 	else
-	       while (count < 3)
+		while (count < 3)
 		{
 			num = atoi(argv[count]);
 			if (num)
