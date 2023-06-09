@@ -17,13 +17,13 @@ int main(int argc, char *argv[])
 	int rem2 = 0;
 	int count = 1;
 
-	if (argc != 1)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	else if (argc == 1)
+	else
 	{
 	while (count < argc)
 	{
