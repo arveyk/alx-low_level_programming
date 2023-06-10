@@ -22,38 +22,31 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-
 	else
 	{
 		change = atoi(argv[count]);
 		if (change < 0)
-		{
 			printf("0\n");
-			return (1);
-		}
-
-
-		switch (change)
-		{
-			case 25:
-			case 10:
-			case 5:
-			case 2:
-			case 1:
-				num += 1;
-				break;
-			default:
-				num += (change / 25);
-				rem += change % 25;
-
-				num += rem / 5;
-				rem1 = rem % 5;
-
-				num += rem1 / 2;
-				rem2 = rem1 % 2;
-				num += rem2;
-				break;
-		}
+		else
+			switch (change)
+			{
+				case 25:
+				case 10:
+				case 5:
+				case 2:
+				case 1:
+					num += 1;
+					break;
+				default:
+					num += (change / 25);
+					rem += change % 25;
+					num += rem / 5;
+					rem1 = rem % 5;
+					num += rem1 / 2;
+					rem2 = rem1 % 2;
+					num += rem2;
+					break;
+			}
 	}
 	printf("%d\n", num);
 	return (0);

@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		{
 			num = atoi(argv[count]);
 			if (num)
-				mult = mult * num;
+				mult *= num;
 			count++;
 		}
 	printf("%d\n", mult);

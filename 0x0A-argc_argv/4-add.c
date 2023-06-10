@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <stdbool.h>
 
 /**
  * main - prints is name to stdout
@@ -12,6 +14,7 @@ int main(int argc, char *argv[])
 {
 
 	int count = 1;
+	int num = 0;
 	int sum = 0;
 
 	if (argc == 0)
@@ -21,8 +24,10 @@ int main(int argc, char *argv[])
 
 		for (; count < argc; count++)
 		{
-			sum += atoi(argv[count]);
-			if (!sum)
+			num = atoi(argv[count]);
+			if (num)
+				sum += num;
+			else
 			{
 				printf("Error\n");
 				return (1);
