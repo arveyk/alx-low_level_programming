@@ -11,11 +11,18 @@
 int is_palindrome(char *s)
 {
 
-	int p = strlen(s) - 1;
+	int p = strlen(s);
+	int g = 0;
 
 	if (s == NULL)
 		return (1);
-	if (s[0] != s[p])
-		return (0);
-	return (s[0] + s[p - 1]);
+	if (g <= p)
+	{
+		if (s[p] != s[g])
+			return (0);
+		p--;
+		g++;
+		is_palindrome(s);
+	}
+	return (1);
 }
