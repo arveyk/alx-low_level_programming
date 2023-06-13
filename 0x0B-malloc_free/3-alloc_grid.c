@@ -2,7 +2,8 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-/**alloc_grid - allocates a 2d array
+/**
+ * alloc_grid - allocates a 2d array
  * @width: width of the array
  * @height: height of the array
  *
@@ -21,19 +22,19 @@ int **alloc_grid(int width, int height)
 
 	for (; row < height; row++)
 	{
-	
+
 		grid[row] = malloc(sizeof(int) * width);
 		if (grid[row] == NULL)
 			return (NULL);
 	}
 
-	for (row = 0;row < height; row++)
+	for (row = 0; row < height; row++)
 	{
-		for (column = 0;column < width; column++)
+		for (column = 0; column < width; column++)
 		{
 			*(*(grid + row) + column) = 0;
 		}
 	}
-	
+
 	return (grid);
 }
