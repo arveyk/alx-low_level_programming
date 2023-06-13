@@ -4,7 +4,7 @@
 
 /**
  * create_array - Creates an array of chars
- * @size of the array
+ * @size: of the array
  * @c: the character to initialize each element of the array
  *
  * Return: NULL if size = 0 of malloc fails

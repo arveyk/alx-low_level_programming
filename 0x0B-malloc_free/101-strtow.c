@@ -16,7 +16,7 @@ char **strtow(char *str)
 	char space[] = " ";
 	int len;
 	int i, j;
-	
+
 	len = strlen(str) + 1;
 
 	st_tow = malloc(sizeof(int *) * len);
@@ -32,7 +32,7 @@ char **strtow(char *str)
 	{
 		for (j = 0; j < (len / 3); ++j)
 		{
-		
+
 			if ((str[i + 1]) == space[0])
 			{
 				st_tow[i][j + 1] = '\0';
