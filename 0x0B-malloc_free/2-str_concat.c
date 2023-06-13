@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 		strcpy(concat, s2);
 	else
 		if (s2 == NULL)
-			strcpy(concat, s2);
+			strcpy(concat, s1);
 		else
 			for (i = 0; i < t_len; i++)
 			{
