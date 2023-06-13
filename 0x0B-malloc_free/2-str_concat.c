@@ -24,24 +24,25 @@ char *str_concat(char *s1, char *s2)
 	if (!concat)
 		return (NULL);
 
-	if (s1 == NULL)
+	if (s1 == NULL && s2 == NULL)
+		return (concat);
+	else if (s1 == NULL)
 		strcpy(concat, s2);
+	else if (s2 == NULL)
+		strcpy(concat, s1);
 	else
-		if (s2 == NULL)
-			strcpy(concat, s1);
-		else
-			for (i = 0; i < t_len; i++)
+		for (i = 0; i < t_len; i++)
+		{
+			if (i < len1)
 			{
-				if (i < len1)
-				{
-					concat[i] = s1[i];
-				}
-				else
-				{
-					concat[i] = s2[y];
-					y++;
-				}
+				concat[i] = s1[i];
 			}
+			else
+			{
+				concat[i] = s2[y];
+				y++;
+			}
+		}
 	concat[t_len] = '\0';
 	return (concat);
 }
