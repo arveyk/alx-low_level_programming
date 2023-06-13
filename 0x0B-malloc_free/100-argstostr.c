@@ -4,17 +4,17 @@
 #include <string.h>
 
 /**
- * argstostr - concatenates all arguments to it
+ * argstostr - concatenates all arguments to it.
  * @ac: argument counter
  * @av: argument vector
- * 
- * Return pointer to new string, NULL on failure
+ *
+ * Return: pointer to new string, NULL on failure
  */
 char *argstostr(int ac, char **av)
 {
 	char *str = NULL;
 	int count;
-	int len;
+	int len = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 		len += strlen(av[count]);
 	}
 
-	str = (char *)malloc(sizeof(char ) * len);
+	str = (char *)malloc(sizeof(char) * len);
 	if (!str)
 		return (NULL);
 
@@ -37,6 +37,6 @@ char *argstostr(int ac, char **av)
 		}
 		str[count - 1] = *av[count];
 	}
-	str[count] ='\n';
+	str[count] = '\n';
 	return (str);
 }
