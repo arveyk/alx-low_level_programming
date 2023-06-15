@@ -14,55 +14,46 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	size_t len = 0;
+	size_t len;
 	size_t len_s1;
 	size_t i;
 	size_t j;
-	char *combi = NULL;
+	char *combi;
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		combi = '\0';
+		combi = "";
 		return (combi);
 	}
-	len += strlen(s1) + n;
+	len = strlen(s1) + n + 1;
 	len_s1 = strlen(s1);
-	combi = malloc(len * sizeof(char) + 2);
+	combi = malloc(sizeof(char) * len);
 	if (combi == NULL)
 		return (NULL);
 	if (s1 == NULL)
 	{
-		for (i = 0; i < n; )
+		for (i = 0; i < n; i++)
 		{
 			combi[i] = s2[i];
-			i++;
 		}
 		combi[i] = '\0';
 	}
 	else if (s2 == NULL)
 	{
-		len = strlen(s1);
-		while (i < len_s1 && s1)
+		for (i = 0; i < len_s1 && s1; i++)
 		{
 			combi[i] = s1[i];
-			i++;
 		}
 		combi[i] = '\0';
 	}
 	else
 	{
-		while (s1 != NULL)
-		{
+		for (i = 0; s1 != NULL && i < len_s1; i++)
 			combi[i] = s1[i];
-			i++;
-		}
-		i--;
-		while (s2 && (i + j) < len)
-		{
+		
+	       	for (j = 0; s2 && j < n; j++)
 			combi[i + j] = s2[j];
-			j++;
-		}
-		combi[i + j] = '\0';
+		combi[len] = '\0';
 	}
 	return (combi);
 }
