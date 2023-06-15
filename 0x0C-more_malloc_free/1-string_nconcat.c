@@ -33,9 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL)
 	{
 		for (i = 0; i < n; i++)
-		{
 			combi[i] = s2[i];
-		}
 		combi[i] = '\0';
 	}
 	else if (s2 == NULL)
@@ -50,8 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		for (i = 0; s1 != NULL && i < len_s1; i++)
 			combi[i] = s1[i];
-		
-	       	for (j = 0; s2 && j < n; j++)
+		for (j = 0; s2 && j < n; j++)
 			combi[i + j] = s2[j];
 		combi[len] = '\0';
 	}
