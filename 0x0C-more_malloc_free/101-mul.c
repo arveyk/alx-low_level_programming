@@ -19,15 +19,18 @@ int main(int ac, char *av[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (!(num1 = atoi(av[1])))
+
+	num1 = atoi(av[1]);
+	if (!(num1))
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (!(num2 = atoi(av[2])))
+	num2 = atoi(av[2]);
+	if (!(num2))
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 	mul_res = num1 * num2;
 	printf("%d\n", mul_res);
