@@ -6,7 +6,7 @@
 /**
  * string_nconcat - function that concatenates 2 strings
  * @s1: first string
- * @s2: 2nd string 
+ * @s2: 2nd string
  * @n: number of stings to copy from 2nd string
  *
  * Return: pointer to new allocated space \
@@ -25,11 +25,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		combi = '\0';
 		return (combi);
 	}
-	
 	len += strlen(s1) + n;
 	len_s1 = strlen(s1);
 	combi = malloc(len * sizeof(char) + 2);
-
 	if (combi == NULL)
 		return (NULL);
 	if (s1 == NULL)
@@ -46,13 +44,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len = strlen(s1);
 		while (i < len_s1 && s1)
 		{
-		
 			combi[i] = s1[i];
 			i++;
 		}
 		combi[i] = '\0';
 	}
-	else 
+	else
 	{
 		while (s1 != NULL)
 		{
@@ -62,7 +59,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i--;
 		while (s2 && (i + j) < len)
 		{
-		
 			combi[i + j] = s2[j];
 			j++;
 		}
