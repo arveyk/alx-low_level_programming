@@ -40,10 +40,8 @@ int main(int argc, char *argv[])
 			default:
 				num += (change / 25);
 				rem += change % 25;
-
 				num += rem / 5;
 				rem1 = rem % 5;
-
 				num += rem1 / 2;
 				rem2 = rem1 % 2;
 				num += rem2;

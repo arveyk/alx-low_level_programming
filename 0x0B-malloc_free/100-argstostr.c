@@ -15,6 +15,7 @@ char *argstostr(int ac, char **av)
 	char *str = NULL;
 	int count;
 	int len = 0;
+	size_t i = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -24,19 +25,36 @@ char *argstostr(int ac, char **av)
 		len += strlen(av[count]);
 	}
 
-	str = (char *)malloc(sizeof(char) * len);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
 
-	for (count = 1; count < ac; count++)
+/*	for (count = 0; count < ac; count++)
 	{
+		for (str_len = 0; str_len < len / (ac * 2))
+
 		if (*av[count] == '\0')
 		{
-			str[count] = '\n';
-			count++;
+* 			str[count] = '\n';
+			continue;
 		}
-		str[count - 1] = *av[count];
+		str[count] = *av[count];
 	}
-	str[count] = '\n';
+	str[len] = '\n';
+*/
+	for (count = 0; count < ac; count++)
+	{
+/*		while(av[count][i] != '\0')	*/
+		while (i < strlen(av[count]))
+		{
+			if (av[count][i + 1] == '\0')
+			{
+				str[i + 1] = '\n';
+			}
+		str[i] = av[count][i];
+		i++;
+		}
+	}
+	str[len + 1] = '\0';
 	return (str);
 }

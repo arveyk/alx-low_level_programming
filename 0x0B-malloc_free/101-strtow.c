@@ -33,11 +33,8 @@ char **strtow(char *str)
 		for (j = 0; j < (len / 3); ++j)
 		{
 
-			if ((str[i + 1]) == space[0])
-			{
-				st_tow[i][j + 1] = '\0';
+			if ((str[i]) == space[0])
 				continue;
-			}
 			st_tow[i][j] = str[j];
 		}
 	}
