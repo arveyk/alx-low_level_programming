@@ -44,7 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		return (str_2);
 	}
-	if (s2 == NULL)
+/*	if (s2 == NULL)
 	{
 		len_s1 = strlen(s1);
 		str_2 = malloc(sizeof(char) * (len_s1 + 2));
@@ -76,5 +76,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			combi[i + j] = s2[j];
 		combi[i + j] = '\0';
 	}
-	return (combi);
+	return (combi);  
+	*/
 }
