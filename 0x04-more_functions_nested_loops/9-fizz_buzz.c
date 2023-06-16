@@ -11,7 +11,7 @@ int main(void)
 
 	for (v = 1; v <= 100; v++)
 	{
-		if (v < 100)
+		if (v <= 100 && v > 1)
 			printf(" ");
 
 	if ((v % 5 == 0) && (v % 3 == 0))
