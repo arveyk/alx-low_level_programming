@@ -24,11 +24,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *s1_s2;
 
 	if (s1 == NULL && s2 == NULL)
-	{
-/*		s1_s2 = "";
-		return (s1_s2);	*/
 		return (NULL);
-	}
 	if (s1 == NULL)
 	{
 		len_s1 = 0;
