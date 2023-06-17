@@ -17,65 +17,45 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size_t len;
 	size_t len_s1;
 	size_t len_s2;
+
 	size_t i;
 	size_t j;
-	char *space = "";
-	char *combi;
-	char *str_2;
 
+	char *s1_s2;
+
+	if (s1 == NULL && s2 == NULL)
+	{
+/*		s1_s2 = "";
+		return (s1_s2);	*/
+		return (NULL);
+	}
 	if (s1 == NULL)
 	{
-		len_s2 = strlen(s2);
-		str_2 = malloc(sizeof(char) * (len_s2 + 2));
-		if (!str_2)
-			return (NULL);
-		str_2[0] = *space;
-		if (n >= len_s2)
-		{
-			for (i = 1; i < len_s2 + 1; i++)
-				str_2[i] = s2[i];
-			str_2[i] = '\0';
-		}
-		else 
-		{
-			for (i = 0; i < n; i++)
-				str_2[i] = s2[i];
-			str_2[i] = '\0';
-		}
-		return (str_2);
+		len_s1 = 0;
+		s1 = "";
 	}
-/*	if (s2 == NULL)
-	{
+	else
 		len_s1 = strlen(s1);
-		str_2 = malloc(sizeof(char) * (len_s1 + 2));
-		if (!str_2)
-			return (NULL);
-		for (i = 0; i < len_s1; i++)
-			str_2[i] = s1[i];
-		str_2[i] = *space;
-		str_2[i + 1] = '\0';
-		return (str_2);
-	}
-	len_s1 = strlen(s1);
-	len_s2 = strlen(s2);
-	len = strlen(s1) + n + 1;
-	combi = malloc(sizeof(char) * len);
-	if (combi == NULL)
-		return (NULL);
-	for (i = 0; s1 != NULL && i < len_s1; i++)
-		combi[i] = s1[i];
-	if (n < len_s2)
+	if (s2 == NULL)
 	{
-		for (j = 0; s2 && j < n; j++)
-			combi[i + j] = s2[j];
-		combi[i + j] = '\0';
+		len_s2 = 0;
+		s2 = "";
 	}
-	else 
+	else
+		len_s2 = strlen(s2);
+	len = len_s1 + len_s2 + 1;
+	s1_s2 = malloc(sizeof(char) * len);
+	for (i = 0; i < len_s1 && s1; i++)
+		s1_s2[i] = s1[i];
+	if (n >= len_s2)
 	{
-		for (j = 0; s2 && j < len_s2; j++)
-			combi[i + j] = s2[j];
-		combi[i + j] = '\0';
+		for (j = 0; j < len_s2 && s2; j++)
+			s1_s2[i + j] = s2[j];
 	}
-	return (combi);  
-	*/
+	else
+		for (j = 0; j < n && s2; j++)
+			s1_s2[i + j] = s2[j];
+	s1_s2[len] = '0';
+	return (s1_s2);
+
 }
