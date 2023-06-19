@@ -2,5 +2,5 @@
 #define PI_H
 
 #define PI 3.14159265359
-typedef int NUM; 
+typedef int NUM;
 #endif
