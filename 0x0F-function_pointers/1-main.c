@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "funtion_pointers.h"
+#include "function_pointers.h"
 
 /**
  * print_elem - prints an integer
@@ -36,3 +36,4 @@ int main(void)
   array_iterator(array, 5, &print_elem);
   array_iterator(array, 5, &print_elem_hex);
   return (0);
+}
