@@ -15,7 +15,7 @@ int main(int ac, char *av[])
 	int b = 0;
 	int (*main_ptr)(int, char **);
 
-	if (ac != 2 || av == NULL)
+	if (ac != 2)
 	{
 		printf("Error\n");
 		exit(1);
