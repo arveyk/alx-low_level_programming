@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - prints its own opcode
@@ -11,20 +12,28 @@ int main(int ac, char *av[])
 {
 
 	int bytes;
-	int(*main_ptr)(int, char **);
+	int b = 0;
+	int (*main_ptr)(int, char **);
 
-
-	if (ac != 1)
+	if (ac != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	bytes = atoi(*av[ac]);
+	bytes = atoi(av[1]);
 	if (!bytes || bytes < 0)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	printf("%s\n", *main_ptr);
+	while (b < bytes)
+	{
+		if (bytes && bytes % 2)
+			printf(" ");
+		printf("%0lx02", (unsigned long int)&main_ptr);
+		b++;
+	}
+	printf("\n");
+
 	return (0);
 }
