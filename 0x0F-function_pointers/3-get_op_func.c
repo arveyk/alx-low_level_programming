@@ -4,8 +4,6 @@
 /**
  * get_op_func - selects the correct function to execute
  * @s: pointer to operator to use
- * @a: first number
- * @b: second number
  *
  * Return: Pointer to function corresponding to the operator
  */
@@ -22,10 +20,10 @@ int (*get_op_func(char *s))(int a, int b)
 	};
 	int i;
 
-	while ((ops[i]).op != NULL && i < 5)
+	i = 0;
+	while ((ops[i]).op != NULL)
 	{
-
-		if (s == (ops[i]).op)
+		if (*s == *((ops[i]).op))
 			return ((ops[i]).f);
 		i++;
 	}

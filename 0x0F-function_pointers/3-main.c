@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	int a;
 	int b;
 	char *p = "-";
-	char *div = "/";
+	char *div = "/%";
 	int res;
 	int (*opr_ptr)(int, int);
 
@@ -30,7 +30,7 @@ int main(int ac, char **av)
 	p = av[2];
 	b = atoi(av[3]);
 
-	if (p == div && b == 0)
+	if ((*p == div[0] || *p == div[1]) && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
