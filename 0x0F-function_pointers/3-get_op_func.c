@@ -22,11 +22,9 @@ int (*get_op_func(char *s))(int a, int b)
 	};
 	int i;
 
-	if (s == NULL)
-		return (NULL);
 	while ((ops[i]).op != NULL && i < 5)
 	{
-	
+
 		if (s == (ops[i]).op)
 			return ((ops[i]).f);
 		i++;
