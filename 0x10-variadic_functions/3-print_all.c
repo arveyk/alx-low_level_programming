@@ -38,11 +38,13 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				s = va_arg(ap, char *);
-				if (!s)
-					printf("(nil)");
-				printf("%s", s);
-				break;
-			default:
+				switch (s)
+				{
+					case NULL:
+						printf("(nil)");
+					default:
+						printf("%s", s);
+				}
 				break;
 		}
 		if (step > 0 && step < len_form - 1)
