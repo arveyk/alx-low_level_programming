@@ -42,6 +42,8 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 				printf("%s", s);
 				break;
+			default:
+				break;
 		}
 		if (step > 0 && step < len_form - 1)
 			printf(", ");
