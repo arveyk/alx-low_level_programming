@@ -17,34 +17,41 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char c;
-	int len_form = strlen(format);
+	int indicate = 0;
 
 	va_start(ap, format);
 	while (format[step] != '\0')
 	{
+		if (indicate == 1)
+			printf(", ");
 		switch (format[step])
 		{
 			case 'i':
 				i = va_arg(ap, int);
 				printf("%d", i);
+				indicate = 1;
 				break;
 			case 'f':
 				f = va_arg(ap, double);
 				printf("%f", f);
+				indicate = 1;
 				break;
 			case 'c':
 				c = va_arg(ap, int);
 				printf("%c", c);
+				indicate = 1;
 				break;
 			case 's':
 				s = va_arg(ap, char *);
 				if (s == NULL)
-					printf("(nil)");
+					s = "(nil)";
 				printf("%s", s);
+				indicate = 1;
+				break;
+			default:
+				indicate = 0;
 				break;
 		}
-		if (step > 0 && step < len_form - 1)
-			printf(", ");
 		step++;
 	}
 	va_end(ap);
