@@ -11,16 +11,16 @@
  */
 void print_all(const char * const format, ...)
 {
-	int step = 0;
-	va_list ap;
 	char *s;
 	int i;
 	float f;
 	char c;
+	int step = 0;
 	int indicate = 0;
+	va_list ap;
 
 	va_start(ap, format);
-	while (format[step] != '\0')
+	while (format != NULL && format[step] != '\0')
 	{
 		if (indicate == 1)
 			printf(", ");
