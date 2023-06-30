@@ -19,7 +19,7 @@ int main(void)
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 	{
-	
+
 		printf("Error\n");
 		return (1);
 	}
@@ -29,13 +29,13 @@ int main(void)
 	head = new;
 	n = print_list(head);
 	printf("-> %lu elements\n", n);
-	
+
 	printf("\n");
 	free(new->str);
 	new->str = NULL;
 	n = print_list(head);
 	printf("-> %lu elements\n", n);
-	
+
 	free(new);
 	return (0);
 }
