@@ -9,7 +9,7 @@
  */
 void free_list(list_t *head)
 {
-	
+
 	list_t *trav;
 
 
@@ -19,7 +19,7 @@ void free_list(list_t *head)
 	{
 		trav = head;
 		head = head->next;
-	
+
 		free(trav->str);
 		free(trav);
 	}
