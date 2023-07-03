@@ -29,5 +29,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		req++;
 		trav = trav->next;
 	}
+	if (req != index)
+		return (0);
 	return (req_node);
 }
