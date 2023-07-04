@@ -11,17 +11,18 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	listint_t *trav;
+	listint_t *break_pnt = (listint_t *)head;
 
 	if (head == NULL)
 		return (0);
 	
-	trav = (listint_t *)head;
-	while (trav != NULL && count < 20)
+	while (head != NULL && count < 50)
 	{
-		printf("[%p] %d\n", (void *)trav, trav->n);
+		if (head == break_pnt && count > 0)
+			return (count);
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
 		count++;
-		trav = trav->next;
 	}
-	return (count);
+	return (98);
 }

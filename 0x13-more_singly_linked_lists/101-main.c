@@ -27,7 +27,6 @@ int main(void)
 	print_listint_safe(head2);
 	head = NULL;
 	node = add_nodeint(&head, 0);
-	add_nodeint(&head, 0);
 	add_nodeint(&head, 1);
 	add_nodeint(&head, 2);
 	add_nodeint(&head, 3);

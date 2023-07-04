@@ -21,8 +21,8 @@ size_t free_listint_safe(listint_t **head)
 	{
 		trav = (*head);
 		(*head) = (*head)->next;
-		free(trav);
 		list_ct++;
+		free(trav);
 	}
 	*head = NULL;
 	return (list_ct);
