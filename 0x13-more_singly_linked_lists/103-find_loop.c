@@ -20,7 +20,7 @@ listint_t *find_listint_loop(listint_t *head)
 
 	while (ahead != NULL)
 	{
-	
+
 		if (trav == ahead)
 			return (trav);
 		trav = trav->next;
