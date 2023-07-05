@@ -19,7 +19,7 @@ int main(void)
 			even_s += fib;
 		fib = prev2 + prev1;
 
-		prev1 =prev2;
+		prev1 = prev2;
 		prev2 = fib;
 	}
 	printf("%ld\n", even_s);
