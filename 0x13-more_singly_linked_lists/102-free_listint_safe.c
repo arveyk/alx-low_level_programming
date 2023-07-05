@@ -14,7 +14,7 @@ size_t free_listint_safe(listint_t **head)
 	listint_t *trav;
 	size_t list_ct = 0;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (0);
 	trav = *head;
 	while (*head != NULL)
