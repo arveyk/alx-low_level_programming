@@ -8,34 +8,18 @@
 int main(void)
 {
 	long int fib = 0;
-	long int prev1 = 2;	/* number n-1 */
-	long int prev2 = 1;	/* number n-2 */
-
-	int s;
-	int sum;
+	long int prev1 = 1;	/* number n-2 */
+	long int prev2 = 2;	/* number n-1 */
 
 
-	for (s = 0; s++ < 98; )
+	for (; fib < 4000000;)
 	{
-		if (s < 3) do
-		{
-			printf("%d, ", s++);
-		}while (s < 3);
-
-		else 
-		{
-			fib = prev1 + prev2;
 		if (fib % 2 == 0)
-			sum += fib;
+			printf("%ld\n", fib);
+		fib = prev1 + prev2;
 
-		prev2 = prev1;
-		prev1 = fib;
-		}
-
-
-
+		prev1 = prev2;
+		prev2 = fib;
 	}
-	putchar('\n');
-
 	return (0);
 }
