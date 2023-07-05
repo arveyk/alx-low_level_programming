@@ -15,13 +15,12 @@ int main(void)
 
 	for (; s < 98; s++)
 	{
-
+		if (s > 0 && s < 98)
+			printf(", ");
 		fib = prev1 + prev2;
 		printf("%ld", fib);
 		prev1 = prev2;
 		prev2 = fib;
-		if (s < 98)
-			printf(", ");
 	}
 	putchar('\n');
 
