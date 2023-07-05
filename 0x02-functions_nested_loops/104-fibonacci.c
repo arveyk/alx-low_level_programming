@@ -8,28 +8,20 @@
 int main(void)
 {
 	long int fib = 0;
-	long int prev1 = 2;	/* number n-1 */
+	long int prev1 = 0;	/* number n-1 */
 	long int prev2 = 1;	/* number n-2 */
 
-	int s = 1;
-	
-	do
-       	{
-		printf("%d, ", s++);
-	}while (s < 3);
+	int s = 0;
 
-	for (s = 4; s++ < 98; )
+	for (; s < 98; s++)
 	{
-	       
+
 		fib = prev1 + prev2;
-		prev2 = prev1;
-		prev1 = fib;
 		printf("%ld", fib);
+		prev1 = prev2;
+		prev2 = fib;
 		if (s < 98)
 			printf(", ");
-
-
-
 	}
 	putchar('\n');
 
