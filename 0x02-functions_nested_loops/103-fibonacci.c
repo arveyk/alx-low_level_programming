@@ -13,12 +13,12 @@ int main(void)
 	long int prev2 = 1;	/* number n-1 */
 
 
-	for (; fib < 4000000;)
+	while (fib < 4000000)
 	{
 		if (fib % 2 == 0)
 			even_s += fib;
 		fib = prev2 + prev1;
-		
+
 		prev1 =prev2;
 		prev2 = fib;
 	}
