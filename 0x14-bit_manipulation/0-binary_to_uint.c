@@ -12,6 +12,7 @@ unsigned int expo_mult(unsigned int idx, unsigned int base);
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int conv = 0;
+	unsigned int ch = 0;
 	char *v;
 	int len = strlen(b) - 1;
 	int tr = 0;
@@ -21,11 +22,15 @@ unsigned int binary_to_uint(const char *b)
 	v = (char *)b;
 	while (v && len >= 0)
 	{
-		if (v[tr] != '0' || v[tr] != '1')
+		ch = (v[tr] - '0');
+		if (ch == 1 || ch == 0)
+		{
+			conv += (ch * expo_mult(2, len));
+			--len;
+			tr++;
+		}
+		else
 			return (0);
-		conv += expo_mult(2, len) * (v[tr] - '0');
-		--len;
-		tr++;
 	}
 	return (conv);
 }
