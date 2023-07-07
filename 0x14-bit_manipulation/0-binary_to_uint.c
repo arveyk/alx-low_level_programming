@@ -14,11 +14,12 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int conv = 0;
 	unsigned int ch = 0;
 	char *v;
-	int len = strlen(b) - 1;
+	int len;
 	int tr = 0;
 
 	if (b == NULL)
 		return (0);
+	len = strlen(b) - 1;
 	v = (char *)b;
 	while (v && len >= 0)
 	{
