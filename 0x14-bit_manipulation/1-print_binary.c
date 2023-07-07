@@ -9,7 +9,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bin = 31;
+	int bin = 63;
 	char bin_rep;
 	char flip = 'a';
 
