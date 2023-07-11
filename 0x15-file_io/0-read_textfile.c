@@ -21,6 +21,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 		return (0);
+	while (ext < 720)
+		buff[ext] = 'a';
+	ext = 0;
 	fd = open(filename, O_RDONLY);
 
 	read(fd, buff, letters);
