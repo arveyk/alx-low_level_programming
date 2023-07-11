@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 /**
- * elf_header - reads the contents of an elf file
+ * main - reads the contents of an elf file
  * @ac: argument counter
  * @av: argument vector
  *
