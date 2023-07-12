@@ -15,25 +15,38 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 
 	ssize_t count = 0;
-	int fd;
+	int fd, ch_read;
 	size_t ext = 0;
-	char buff[720];
+	char buf[BUF_S];
 
 	if (filename == NULL)
 		return (0);
-	while (ext < 720)
-		buff[ext] = 'a';
-	ext = 0;
 	fd = open(filename, O_RDONLY);
-
-	read(fd, buff, letters);
-	while (buff[ext] != '\0' && ext < letters)
+	if (fd < 0)
+		return (0);
+	while (ext < BUF_S)
 	{
-		count += write(1, &buff[ext], 1);
+		buf[ext] = 'a';
 		ext++;
 	}
+	ext = 0;
+	while (ext < letters && ch_read != 0)
+	{
+		ch_read = read(fd, buf, BUF_S);
+		if (ch_read < 0)
+			return (-1);
+		if ((size_t)ch_read <= letters)
+		{
+			count += write(1, buf, ch_read);
+			ext += ch_read;
+		}
+		else
+		{
+			count += write(1, buf, letters);
+			ext += ch_read;
+			break;
+		}
+	}
 	close(fd);
-	if (count <= 0)
-		return (0);
 	return (count);
 }
