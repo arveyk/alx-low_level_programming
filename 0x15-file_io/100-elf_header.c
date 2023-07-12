@@ -14,21 +14,29 @@
 int main(int ac, char **av)
 {
 	int fd;
-	int f = 96;
-	char buf[96];
+	int ch_read;
+	int ch_wr;
+	char buf[64];
 
-	if (ac != 3)
-		exit(98);
-	fd = open(av[2], O_RDONLY);
-	if (fd == -1)
+	if (ac != 2)
 	{
-		dprintf(2, "%s is not an ELF file", av[2]);
+		dprintf(2, "Usage: %s elf_file\n", av[0]);
 		exit(98);
 	}
-	lseek(fd, (long) f, L_SET);
-	read(fd, buf, 96);
-	write(1, buf, 96);
-	close(fd);
-
+	fd = open(av[1], O_RDONLY);
+	if (fd == -1)
+	{
+		dprintf(2, "%s is not an ELF file\n", av[1]);
+		exit(98);
+	}
+	lseek(fd, 51, SEEK_SET);
+	ch_read = read(fd, buf, 64);
+	if (ch_read <= 0)
+		printf("Could not read from file %s\n", av[1]);
+	ch_wr = write(1, buf, 64);
+	if (ch_wr <= 0)
+		printf("Error: Couldn't write\n");
+	if (!close(fd))
+		printf("Error: Can't close file\n");
 	return (0);
 }
