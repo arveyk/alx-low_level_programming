@@ -13,11 +13,12 @@
 char **strtow(char *str)
 {
 	char **st_tow;
+	char empty[] = "";
 	char space[] = " ";
 	int len;
 	int i, j;
 
-	if (str == NULL || str == "")
+	if (str == NULL || str == empty)
 		return (NULL);
 	len = strlen(str) + 1;
 
