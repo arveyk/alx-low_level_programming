@@ -17,6 +17,8 @@ char **strtow(char *str)
 	int len;
 	int i, j;
 
+	if (str == NULL || str == "")
+		return (NULL);
 	len = strlen(str) + 1;
 
 	st_tow = malloc(sizeof(int *) * len);
