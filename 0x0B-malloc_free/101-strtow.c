@@ -44,7 +44,6 @@ char **strtow(char *str)
 			elem_num++;
 		}
 	}
-	printf("%d\n", elem_num);
 	str_arr = malloc((elem_num + 1) * sizeof(char *));
 	if (!str_arr)
 		return (NULL);
