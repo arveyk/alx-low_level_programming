@@ -30,7 +30,7 @@ char **strtow(char *str)
 	int elem_num = 0, posi_n;
 	int i, m, z, p;
 
-	if (str == NULL || *str == *empty *str == 32)
+	if (str == NULL || *str == *empty || *str == 32)
 		return (NULL);
 	for (i = 0; str[i] != '\0' && str; i++)
 	{
