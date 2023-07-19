@@ -14,19 +14,18 @@
 char *argstostr(int ac, char **av)
 {
 
+	unsigned int j = 0;
 	char *str_com;
 	int tt_len;
 	int i;
 	int k = 0;
-	unsigned int j = 0;
 	int p = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	tt_len = ac + 1;
+	tt_len = ac;
 	for (i = 0; i < ac; i++)
-		tt_len += strlen(av[i]) + 1;
-
+		tt_len += strlen(av[i]);
 	str_com = malloc(sizeof(char) * tt_len);
 	if (!str_com)
 		return (NULL);
@@ -35,7 +34,6 @@ char *argstostr(int ac, char **av)
 		if (av[p][j] == '\0')
 		{
 			str_com[k] = '\n';
-			printf("%d\t", j);
 			p++;
 			k++;
 			j = 0;
