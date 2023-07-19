@@ -1,52 +1,52 @@
-#include "main.h"
-#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
+#include "main.h"
 #include <string.h>
 
 /**
- * argstostr - concatenates all arguments to it.
+ * argstostr - concatenates string
  * @ac: argument counter
- * @av: argument vector
+ * @av: argument
  *
- * Return: pointer to new string, NULL on failure
+ * Return: concatenated string
  */
 char *argstostr(int ac, char **av)
 {
-	char *str = NULL;
-	int count;
-	int len = 0;
-	size_t j;
-	ssize_t var3;
 
-	if (av == NULL)
+	char *str_com;
+	int tt_len;
+	int i;
+	int k = 0;
+	unsigned int j = 0;
+	int p = 1;
+
+	if (ac == 1 || av == NULL)
 		return (NULL);
+	tt_len = 1;
+	for (i = 1; i < ac; i++)
+		tt_len += strlen(av[i]) + 1;
 
-	for (count = 0; count < ac; count++)
-	{
-		len += strlen(av[count]);
-	}
-	len++;
-
-	str = malloc(sizeof(char) * len);
-	if (!str)
+	str_com = malloc(sizeof(char) * tt_len);
+	if (!str_com)
 		return (NULL);
-	var3 = 0;
-	j = 0;
-	count = 0;
-	while (count < ac)
-	{
-		while (var3 < len && j < strlen(av[count]))
+	str_com[tt_len - 1] = '\0';
+	do {
+		if (av[p][j] == '\0')
 		{
-			str[var3] = av[count][j];
-			var3++;
-			j++;
-		}
-		if (av[count][j] == '\0')
+			str_com[k] = '\n';
+			p++;
+			k++;
 			j = 0;
-		count++;
-	}
-	str[var3] = '\n';
-	str[var3 + 1] = '\0';
-
-	return (str);
+		}
+		else
+		{
+			do {
+				str_com[k] = av[p][j];
+				k++;
+				j++;
+			} while (av[p][j] != '\0');
+		}
+	} while (p < ac);
+	return (str_com);
 }
