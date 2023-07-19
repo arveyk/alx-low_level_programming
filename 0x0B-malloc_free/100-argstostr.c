@@ -21,10 +21,10 @@ char *argstostr(int ac, char **av)
 	unsigned int j = 0;
 	int p = 0;
 
-	if (ac == 1 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
-	tt_len = 1;
-	for (i = 1; i < ac; i++)
+	tt_len = ac + 1;
+	for (i = 0; i < ac; i++)
 		tt_len += strlen(av[i]) + 1;
 
 	str_com = malloc(sizeof(char) * tt_len);
