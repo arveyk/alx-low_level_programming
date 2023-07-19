@@ -35,6 +35,7 @@ char *argstostr(int ac, char **av)
 		if (av[p][j] == '\0')
 		{
 			str_com[k] = '\n';
+			printf("%d\t", j);
 			p++;
 			k++;
 			j = 0;
