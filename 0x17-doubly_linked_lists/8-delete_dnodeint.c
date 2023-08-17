@@ -33,8 +33,9 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		if (travel == index)
 		{
-			prev->next = trav->next;
-			nxt->prev = prev;
+			prev->next = nxt;
+			if (nxt != NULL)
+				nxt->prev = prev;
 			free(trav);
 			return (1);
 		}
