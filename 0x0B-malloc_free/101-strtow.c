@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "main.h"
 
+size_t char_count(char str[]);
 /**
  * ischar - checks if a charcter is printable
  * @cha: character to check
@@ -26,24 +28,14 @@ char **strtow(char *str)
 	char **str_arr = NULL;
 	char empty[] = "";
 	int len;
-	int in_wrd = 0;
 	int elem_num = 0, posi_n;
-	int i, m, z, p;
+	int m, z, p;
 
 	if (str == NULL || *str == *empty)
 		return (NULL);
-	if (*str == 32 && strlen(str) == 1)
+	elem_num = char_count(str);
+	if (elem_num == 0)
 		return (NULL);
-	for (i = 0; str[i] != '\0' && str; i++)
-	{
-		if (str[i] == 32 || str[i] == '\t')
-			in_wrd = 0;
-		else if (in_wrd == 0)
-		{
-			in_wrd = 1;
-			elem_num++;
-		}
-	}
 	str_arr = malloc((elem_num + 1) * sizeof(char *));
 	if (!str_arr)
 		return (NULL);
@@ -71,4 +63,34 @@ char **strtow(char *str)
 			continue;
 	}
 	return (str_arr);
+}
+
+/**
+ * char_count - counts the number of characters in a string
+ * @str: pointer to the string to count
+ *
+ * Return: number of words
+ */
+size_t char_count(char str[])
+{
+	int i;
+	int det = 0;
+	int in_wrd = 0;
+	size_t elem_num = 0;
+
+	for (i = 0; str[i] != '\0' && str; i++)
+	{
+		if (in_wrd == 1)
+			det = 1;
+		if (str[i] == 32 || str[i] == '\t')
+			in_wrd = 0;
+		else if (in_wrd == 0)
+		{
+			in_wrd = 1;
+			elem_num++;
+		}
+	}
+	if (det == 0)
+		return (0);
+	return (elem_num);
 }
