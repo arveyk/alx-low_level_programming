@@ -15,17 +15,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	unsigned long int position;
 	unsigned long int size = ht->size;
-	hash_node_t * new_node;
+	hash_node_t *new_node;
 
 	if (!strlen(key))
 		return (0);
-/*	while(idx < size)
+/*
+ * while(idx < size)
 	{	if(strcmp(ht[idx], key) == 0)
 		{
 			return (0);
 		}
 		idx++;
-	}  
+	}
 	unsigned long int idx = 0;
 	*/
 	position = key_index((const unsigned char *)key, size);
