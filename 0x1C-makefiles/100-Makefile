@@ -1,0 +1,29 @@
+RM:= clean oclean fclean
+
+.PHONY: all $(RM) re
+
+CC := gcc
+
+CFLAGS := -Wall -Werror -pedantic -Wextra
+
+SRC := $(wildcard *.c)
+
+OBJ := $(SRC:%.c=%.o)
+
+school := $(OBJ:%.o=%)
+
+NAME:= $(school)
+
+all: $(school) re  
+
+$(school): $(SRC)
+	$(CC) $(CFLAGS) $^ -o  $@
+
+clean:
+	rm *~
+
+oclean:
+	rm -f *.o
+
+fclean:
+	rm -rf *~ *.o ${NAME}
