@@ -4,10 +4,10 @@ CC = gcc
 
 SRC:= $(wildcard *.c)
 
-all: school
+all: school clean
 
 school : ${SRC}
 	$(CC) $^ -o $@
 
 clean:
-	rm *.o
+	@rm school
