@@ -1,11 +1,7 @@
-#.PHONY : all
-
-# $^ references all the prerequisites
-# eg	$(CC) $^ -o school
-CC = gcc
-
+CC := gcc 
 SRC := main.c school.c
 
-all : ${SRC}
-	$(CC) $^ -o school
+.PHONY : all
 
+all : 
+	$(CC) ${SRC} -o school
