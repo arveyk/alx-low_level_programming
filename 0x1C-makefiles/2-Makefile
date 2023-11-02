@@ -1,20 +1,14 @@
-.PHONY: all 
+#.PHONY : all
 
 CC = gcc
 
-SRC := $(wildcard *.c)
+SRC = $(wildcard *.c)
 
-#OBJ := $(SRC:%.c=%.o)
+OBJ = $(SRC:%.c=%.o)
 
-#NAME := $(OBJ:%.o=%)
+all: $(SRC)
+	$(CC) -c -o $@ $<
 
-all: ${NAME}
+$(OBJ): $(SRC)
+	$(CC) $(OBJ) -o school
 
-$(NAME): $(OBJ) 
-	${CC} $< -o $@
-
-$(OBJ): ${SRC}
-	${CC} -c -o $^ $@
-
-clean:
-	rm *.o

@@ -1,8 +1,11 @@
-.PHONY : all
+#.PHONY : all
 
+# $^ references all the prerequisites
+# eg	$(CC) $^ -o school
 CC = gcc
 
-SRC:= $(wildcard *.c)
+SRC := $(wildcard *.c)
 
-all: ${SRC}
+all : ${SRC}
 	$(CC) $^ -o school
+
