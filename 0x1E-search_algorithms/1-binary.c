@@ -19,9 +19,9 @@ int binary_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	while (limit-- > 0)
+	while (limit >= 0)
 	{
-		if (left_p >= right_p)
+		if (left_p > right_p)
 			break;
 		printf("Searching in array: ");
 		for (trav = left_p; trav <= right_p; trav++)
@@ -42,6 +42,7 @@ int binary_search(int *array, size_t size, int value)
 			right_p = mid - 1;
 		else
 			left_p = mid + 1;
+		limit -= 1;
 	}
 	return (-1);
 }
