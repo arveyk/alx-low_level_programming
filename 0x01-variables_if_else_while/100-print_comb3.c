@@ -7,12 +7,10 @@
  */
 int main(void)
 {
-
-
-	int n = 0;
-	int m = 0;
-
-	/*for (n = 0; n < 10; n++)
+	int m;
+	int n;
+	/*
+	 * for (n = 0; n < 10; n++)
 	{	
 	
 		putchar(n + '0);
@@ -33,23 +31,19 @@ int main(void)
 		
 		}
 
-			
-
-	}*/
-	while (n < 9)
+	*/
+	for (n = 0; n < 9; n++)
 	{
-		while (m <= 9) 
+		for (m = n + 1; m <= 9; m++) 
 		{
 			putchar(n + '0');
 			putchar(m + '0');
-			m++;
-			if (n <= 9)
+			if (n < 8)
 			{
 				putchar(',');
+				putchar(' ');
 			}
 		}
-		m = n;
-		n++;
 	}
 	putchar('\n');
 
