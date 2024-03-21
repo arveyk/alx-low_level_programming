@@ -43,12 +43,12 @@ char *str_concat(char *s1, char *s2)
 	else
 		for (i = 0; i < t_len; i++)
 		{
-			if (s1[i] && i < len1)
+			if (i < len1)
 				concat[i] = s1[i];
 			else
+			{
 				concat[i] = s2[y++];
-			if (!s2[y])
-				break;
+			}
 		}
 	return (concat);
 }
