@@ -12,37 +12,43 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-
 	char *concat = NULL;
-	int len1 = strlen(s1);
-	int len2 = strlen(s2);
-	int t_len = len1 + len2 + 1;
-	int i;
-	int y = 0;
+	int len1 = 0, len2 = 0;
+	int t_len, i, y = 0;
 
-	concat = (char *)malloc(sizeof(char) * (len1 + len2) + 1);
-	if (!concat)
-		return (NULL);
-
-	if (s1 == NULL && s2 == NULL)
+	if (s1)
+		len1 = strlen(s1);
+	if (s2)
+		len2 = strlen(s2);
+	t_len = len1 + len2 + 1;
+	if (t_len > 1)
+	{
+		concat = (char *)malloc(sizeof(char) * (len1 + len2) + 1);
+		if (!concat)
+			return (NULL);
+		concat[t_len - 1] = '\0';
+	}
+	else
+	{
+		concat = (char *)malloc(sizeof(char) * 1);
+		if (!concat)
+			return (NULL);
+		concat[0] = '\0';
 		return (concat);
-	else if (s1 == NULL)
+	}
+	if (s1 == NULL && s2)
 		strcpy(concat, s2);
-	else if (s2 == NULL)
+	else if (s2 == NULL && s1)
 		strcpy(concat, s1);
 	else
 		for (i = 0; i < t_len; i++)
 		{
-			if (i < len1)
-			{
+			if (s1[i] && i < len1)
 				concat[i] = s1[i];
-			}
 			else
-			{
-				concat[i] = s2[y];
-				y++;
-			}
+				concat[i] = s2[y++];
+			if (!s2[y])
+				break;
 		}
-	concat[t_len] = '\0';
 	return (concat);
 }
